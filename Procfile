@@ -1,1 +1,2 @@
-web: gunicorn app:portfolio-project
+
+web: gunicorn myproject.wsgi
