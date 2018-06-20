@@ -1,0 +1,26 @@
+{% extends 'jobs/base.html' %} 
+    {% load staticfiles %}
+    {% block content %}
+    <main role="main">
+
+     <div class="jumbotron text-center">
+       <h1 class="header">Welcome to my blog!</h1>
+       <img src="{% static 'ewa.jpg' %}" alt="Ewa" height="300" width="300">
+     </div>
+     <div class="container">
+       <h2>Latests posts</h2>
+       <hr>
+       <ul style="list-style: none">
+         {% for post in posts %}
+         <li>
+          <a href="{% url 'single' post.id %}"><h3>{{post.title}}</h3></a>
+           <p>{{post.summary}}</p>
+           <span>{{post.created_short}}</span>
+         </li>
+         {% endfor %}
+       </ul>
+     </div>
+
+    </main>
+  {% endblock %}
+
